@@ -1,0 +1,39 @@
+# How to Add More Files to Your Keystone Project
+
+Adding new files to your web project is straightforward! Here's a quick guide:
+
+1.  **Create the File:**
+    *   Right-click in your project folder (where `index.html`, `style.css`, and `script.js` are).
+    *   Select "New File" (or "New Text Document" and then rename it).
+    *   Give it a meaningful name and extension (e.g., `another_document.txt`, `new_data.json`, `additional_styles.css`).
+
+2.  **Referencing in HTML (if applicable):**
+    *   **For CSS:** If you add `additional_styles.css`, link it in `index.html` within the `<head>` section:
+        ```html
+        <link rel="stylesheet" href="additional_styles.css">
+        ```
+    *   **For JavaScript:** If you add `another_script.js`, link it in `index.html` usually before the closing `</body>` tag:
+        ```html
+        <script src="another_script.js"></script>
+        ```
+    *   **For Text/Data Files (like lore):** You'll typically fetch these using JavaScript as demonstrated with `valoria_lore.txt`. You just need the file to exist in the same directory (or a specified path).
+
+3.  **Accessing with JavaScript (like lore files):**
+    *   To load another `.txt` file (e.g., `history_of_valoria.txt`), you'd use a similar `fetch` call in your `script.js`:
+        ```javascript
+        async function loadHistory() {
+            try {
+                const response = await fetch('history_of_valoria.txt');
+                const history = await response.text();
+                console.log(history); // Or display it in your UI
+            } catch (error) {
+                console.error("Failed to load history:", error);
+            }
+        }
+        // Call loadHistory() when needed, e.g., on a button click
+        ```
+
+**Important Notes:**
+*   **File Paths:** If your files are in subfolders (e.g., `css/additional_styles.css`), remember to include the folder name in the path (`href="css/additional_styles.css"`).
+*   **Consistency:** Keep your file naming consistent and organized.
+*   **Local Server:** For `fetch` requests to work reliably, especially when loading local files, it's often best to open your `index.html` file through a local web server (like using the "Live Server" extension in VS Code, or Python's `http.server`). Directly opening `index.html` from your file system might sometimes cause security restrictions for `fetch`.

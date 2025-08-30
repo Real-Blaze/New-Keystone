@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystone - Kingdom of Valoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-icon" id="menuIcon">&#9776;</div>
+            <h1>Keystone</h1>
+            <button class="new-chat-button" id="newChatButton">New Chat</button>
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" id="modelToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label">Use Gemini 1.5 Pro</span>
+                </li>
+                <li><a href="#" id="aboutValoriaLink">About Valoria</a></li>
+            </ul>
+        </div>
+
+        <div class="chat-area" id="chatArea">
+            <p class="initial-message" id="initialMessage">How can I help you today?</p>
+            <!-- Chat messages will be inserted here -->
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- About Valoria Modal -->
+    <div id="aboutValoriaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalButton">&times;</span>
+            <h2>About the Kingdom of Valoria</h2>
+            <div id="valoriaLoreContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
